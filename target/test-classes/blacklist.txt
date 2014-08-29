@@ -1,5 +1,0 @@
-axis-.*\.jar
-flop-.*\.jar
-^ant\-\d.*\.jar$
-(^axis\-\d.*\.jar$)|(^stax\-api\-\d.*\.jar$)
-^test1jar\-\d.*\.jar$
