@@ -1,4 +1,4 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

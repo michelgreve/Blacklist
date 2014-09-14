@@ -1,4 +1,4 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 class Pair<FIRST, SECOND> {
     private final FIRST first;

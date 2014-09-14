@@ -1,7 +1,8 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import nl.michelgreve.maven.plugins.Pair;
 
 import org.junit.Assert;
 import org.junit.Test;

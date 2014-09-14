@@ -1,4 +1,4 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipInputStream;
+
+import nl.michelgreve.maven.plugins.UnZipper;
 
 import org.apache.maven.plugin.logging.Log;
 import org.junit.Before;
@@ -25,7 +27,7 @@ public class UnZipperTest {
     public void setUp() {
         EXTENSIONS.add("war");
         EXTENSIONS.add("EAR");
-        unZipper = new nl.michelgreve.plugins.UnZipper(LOG, EXTENSIONS);
+        unZipper = new nl.michelgreve.maven.plugins.UnZipper(LOG, EXTENSIONS);
     }
 
     @Test
@@ -45,7 +47,7 @@ public class UnZipperTest {
         final List<String> extensions = new ArrayList<String>();
         extensions.add("war");
         extensions.add("ear");
-        final UnZipper unZipper = new nl.michelgreve.plugins.UnZipper(LOG, extensions);
+        final UnZipper unZipper = new nl.michelgreve.maven.plugins.UnZipper(LOG, extensions);
         unZipper.unzip(zipInputStream, "");
         assertEquals(27, unZipper.getFiles().size());
     }

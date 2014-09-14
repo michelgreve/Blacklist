@@ -1,10 +1,12 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.File;
 import java.util.List;
+
+import nl.michelgreve.maven.plugins.FilePatternReader;
 
 import org.apache.maven.plugin.logging.Log;
 import org.junit.Test;

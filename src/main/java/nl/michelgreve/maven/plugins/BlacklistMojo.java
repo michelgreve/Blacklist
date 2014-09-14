@@ -1,4 +1,4 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,9 +10,8 @@ import java.util.zip.ZipInputStream;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 
-/**
+/*
  * @goal blacklist
  * @requiresProject false
  * @phase verify
@@ -22,33 +21,34 @@ public class BlacklistMojo extends AbstractMojo {
     private final List<Pair<String, String>> files = new ArrayList<Pair<String, String>>();
     private final UnZipper unZipper;
 
-    /**
+    /*
      * @parameter
      */
     private final List<String> extensions = new ArrayList<String>();
 
-    /**
+    /*
      * @parameter default-value="false"
      */
     private boolean isWarningError;
 
-    /**
+    /*
      * @parameter default-value="true"
      */
     private boolean isDeployError;
 
-    /**
+    /*
      * @parameter expression="${blacklist.location}" default-value="blacklist.txt"
+     * 
      * @required
      */
     private String location;
 
-    /**
+    /*
      * @parameter expression="${project.build.directory}"
      */
     private File buildDirectory;
 
-    /**
+    /*
      * @parameter expression="${project.build.defaultGoal}"
      */
     private String lifecycle;
@@ -66,7 +66,13 @@ public class BlacklistMojo extends AbstractMojo {
         unZipper = new UnZipper(getLog(), extensions);
     }
 
-    public void execute() throws MojoExecutionException, MojoFailureException {
+    /**
+     * Start the execution of the plugin.
+     * 
+     * @MojoExecutionException When a blacklisted item is detected and the configuration is set to error for this maven
+     *                         lifecycle.
+     */
+    public void execute() throws MojoExecutionException {
         getLog().info("Blacklist location: " + location.toString());
         final File blackListFile = new File(location.toString());
         if (blackListFile.exists()) {

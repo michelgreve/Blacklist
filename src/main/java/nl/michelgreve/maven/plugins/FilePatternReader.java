@@ -1,4 +1,4 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 import java.io.BufferedReader;
 import java.io.File;

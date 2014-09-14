@@ -1,7 +1,9 @@
-package nl.michelgreve.plugins;
+package nl.michelgreve.maven.plugins;
 
 import java.io.File;
 import java.lang.reflect.Field;
+
+import nl.michelgreve.maven.plugins.BlacklistMojo;
 
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
