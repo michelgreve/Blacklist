@@ -1,4 +1,0 @@
-Blacklist
-=========
-
-blacklist-maven-plugin
